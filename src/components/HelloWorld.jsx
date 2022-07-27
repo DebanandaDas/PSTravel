@@ -1,8 +1,12 @@
 import React from 'react'
+import { useKeycloak } from "@react-keycloak/web";
 
 const HelloWorld = () => {
+  const { keycloak, initialized } = useKeycloak();
   return (
-    <div data-testid="helloContainer">HelloWorld from protected route</div>
+    <>
+    <div className="helloContainer">HelloWorld from protected route</div>
+    </>
   )
 }
 

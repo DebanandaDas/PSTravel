@@ -11,6 +11,7 @@
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
+    "console-feed": "^3.4.0",
     "enzyme": "^3.11.0",
     "jest-dom": "^4.0.0",
     "keycloak-js": "^18.0.1",

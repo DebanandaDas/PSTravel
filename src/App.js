@@ -7,12 +7,18 @@ import HelloWorld from "./components/HelloWorld";
 import Navbar from "./components/Navbar";
 import { useState } from "react";
 import { AppContext } from "./contexts/AppContext";
-
+import { logger } from './logger/Logger.ts';
 import PrivateRoute from "./utils/ProtectedRoute";
 import "@material-ui/core";
 
 function App() {
   const [contextValue, setContextValue] = useState({});
+
+  logger.log('Hello!');
+  logger.warn('Careful there!');
+  logger.error('Oh, no!');
+  logger.warn( process.env.REACT_APP_APP_ENV)
+
   return (
     <AppContext.Provider value={{ contextValue, setContextValue }}>
       <ReactKeycloakProvider authClient={keycloak}>
@@ -20,6 +26,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            
             <Route
               path="/helloWorld"
               element={
